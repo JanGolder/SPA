@@ -5,7 +5,8 @@ import EventDetailPage from "./pages/EventDetail";
 import NewEventPage from "./pages/NewEvent";
 import EditEventPage from "./pages/EditEvent";
 import RootEvents from "./pages/RootEvents";
-import EventsPage from "./pages/Events";
+// loader przeniesiony do komponentu gdzie dane są potrzebne dla lepszej przejrzystości, tutaj import funkcji z loadera
+import EventsPage, { loader as eventsLoader } from "./pages/Events";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,7 +19,8 @@ function App() {
           path: "events",
           element: <RootEvents />,
           children: [
-            { index: true, element: <EventsPage /> },
+            // loader wszystko co zostanie zwrócone w funkcji przekazuje do elementu (komponentu), można przekazać każdy rodzaj danych
+            { index: true, element: <EventsPage />, loader: eventsLoader},
             { path: ":eventid", element: <EventDetailPage /> },
             { path: "new", element: <NewEventPage /> },
             { path: ":eventid/edit", element: <EditEventPage /> },
