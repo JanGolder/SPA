@@ -5,6 +5,7 @@ import EventDetailPage from "./pages/EventDetail";
 import NewEventPage from "./pages/NewEvent";
 import EditEventPage from "./pages/EditEvent";
 import RootEvents from "./pages/RootEvents";
+import ErrorPage from "./pages/Error";
 // loader przeniesiony do komponentu gdzie dane są potrzebne dla lepszej przejrzystości, tutaj import funkcji z loadera
 import EventsPage, { loader as eventsLoader } from "./pages/Events";
 
@@ -13,6 +14,8 @@ function App() {
     {
       path: "/",
       element: <RootLayout />,
+      // ErrorPage będzie wyświetlał się na każdym poziomie root, ponieważ nie ma zadeklarowanych innych errorElemens niżej w strukturze
+      errorElement: <ErrorPage/>,
       children: [
         { index: true, element: <HomePage /> },
         {
