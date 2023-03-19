@@ -1,5 +1,5 @@
 // useLoaderData pobiera dane z loadera (tego najbliższego)
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, json } from "react-router-dom";
 
 import EventsList from "../components/EventsList";
 
@@ -27,12 +27,14 @@ export async function loader() {
     //   return {isError: true, message: 'Could not fetch events.'}
     // wersja alternatywna z użyciem throw - przy użyciu throw errorElement przechwytuje wartość Error i wyświetla komponent, message w formacie json, zasadne jest dodanie warunku if response.status === okreslony status to przekazujemy konkretną wartość
     // if (response.status === 500) {
-      throw new Response(
-        JSON.stringify({ message: "Could not fetch events." }),
-        {
-          status: 500,
-        }
-      );
+    // dzięki json można zapisać to w wersji skróconej bez zmany na format json manualnie
+    //   throw new Response(
+    //     JSON.stringify({ message: "Could not fetch events." }),
+    //     {
+    //       status: 500,
+    //     }
+    //   );
+    throw json({ message: "Could not fetch events" }, { status: 500 });
     // }
   } else {
     //   konstruktor Response jest w przeglądarce, zawsze jak jest zwracany w loaderze, react router wyciąga z niego dane, kiedy używa useLoaderData, nie trzeba więc wydobywać danych poprzez 'const resData = await response.json();', można te dane przekazać od razu
