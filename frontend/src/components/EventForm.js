@@ -1,10 +1,15 @@
 // Form umożliwia wysyłkę data przez action, pomimo method="post" nie będzie wysłane od razu do backend ale do action
-import { useNavigate, Form } from "react-router-dom";
+// useNavigation przejmuje informację o submicie - m.in. data + status
+import { useNavigate, Form, useNavigation } from "react-router-dom";
 
 import classes from "./EventForm.module.css";
 
 function EventForm({ method, event }) {
   const navigate = useNavigate();
+
+  // useNavigation zwraca obiekt, który można wykorzystać do odczytu data lub status
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
   function cancelHandler() {
     navigate("..");
   }
@@ -55,7 +60,8 @@ function EventForm({ method, event }) {
         <button type="button" onClick={cancelHandler}>
           Cancel
         </button>
-        <button>Save</button>
+        {/* wykorzystanie status w useNavigation do disabled i text buttona */}
+        <button disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Save'}</button>
       </div>
     </Form>
   );
