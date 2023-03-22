@@ -12,6 +12,7 @@ import ErrorPage from "./pages/Error";
 // loader przeniesiony do komponentu gdzie dane są potrzebne dla lepszej przejrzystości, tutaj import funkcji z loadera
 import EventsPage, { loader as eventsLoader } from "./pages/Events";
 import {action as manipulateEventAction} from './components/EventForm';
+import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
 
 function App() {
   const router = createBrowserRouter([
@@ -44,6 +45,11 @@ function App() {
             },
             { path: "new", element: <NewEventPage />, action: manipulateEventAction },
           ],
+        },
+        {
+          path: 'newsletter',
+          element: <NewsletterPage />,
+          action: newsletterAction,
         },
       ],
     },

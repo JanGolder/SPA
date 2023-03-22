@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"Race in Barcelona","image":"https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/motorsport/news/2023/02_24-daytona/cover_m.jpg","date":"2023-07-11","description":"Race in Barcelona","id":"62062da0-b001-423a-aa38-b9c7fa3e51dc"},{"title":"Ibiza Party","image":"https://magic-ibiza.com/wp-content/uploads/2022/11/destino-ibiza-pool-party-1024x576.webp","date":"2023-07-20","description":"Summer Ibiza Party","id":"7fd18c02-a3d3-4cbe-83b7-70f0ff2f92b2"},{"title":"Christmas Market!","image":"https://visitgdansk.com/en/download/2022-12/2771.jpg","date":"2022-12-11","description":"Christmas market in Gdansk","id":"7938e6d9-d9fb-4e87-a266-7be6cfc85698"}]}
