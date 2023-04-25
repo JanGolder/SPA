@@ -4,7 +4,7 @@ const HomePage = ()=>{
 
     return (
         <PageContent title="Welcome">
-            <p>Browse all our amazing events!</p>
+            <p>Browse all our events!</p>
         </PageContent>
 
     )
