@@ -7,7 +7,7 @@ const RootEvents = ()=>{
         <>
         <EventNavigation/>
             <Outlet/>
-                </>
+        </>
     )
 
 };
